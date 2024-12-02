@@ -25,7 +25,7 @@ func GenerateCppFromGraph(graph CalculationGraph, variables []VariableNode, mode
 
 // addHeader добавляет заголовок файла.
 func addHeader(buffer *bytes.Buffer) {
-	buffer.WriteString("#include <iostream>\n")
+	buffer.WriteString("#include <iostream>")
 	buffer.WriteString("#include <cstdlib>\n\n")
 }
 

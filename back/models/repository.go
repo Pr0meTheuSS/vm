@@ -104,8 +104,9 @@ func (repo *Repository) CalculateVariableOrder(modelName, targetVariable string)
 		for _, variable := range model.Variables {
 			if variable.Name == variableName && variable.Value != "" {
 				graph.Nodes = append(graph.Nodes, CalculationNode{
-					Inputs:  nil,
-					Outputs: []string{variableName},
+					Operation: "Get",
+					Inputs:    []string{variableName},
+					Outputs:   []string{variableName},
 				})
 				return nil
 			}
