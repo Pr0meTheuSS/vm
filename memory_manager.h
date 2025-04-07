@@ -4,7 +4,7 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#define MEMORY_SIZE 4096
+#define MEMORY_SIZE 4096 * 64
 
 // Метаданные для переменной
 typedef struct {

@@ -1,0 +1,61 @@
+{
+    "types": {
+        "matrix": {
+            "base": "array[array[float]]",
+            "constraints": {
+            }
+        },
+        "block": {
+            "base": "array[array[float]]",
+            "constraints": {
+            }
+        }
+    },
+    "variables": {
+        "A": { "type": "matrix", "size": "n" },
+        "B": { "type": "matrix", "size": "n" },
+        "C": { "type": "matrix", "size": "n" },
+        "n": { "type": "int", "value": "1024" }
+    },
+    "operations": {
+        "getBlock": {
+            "description": "Извлекает блок из матрицы",
+            "inputs": [
+                {"name": "matrix", "type": "matrix"},
+                {"name": "index", "type": "int"}
+            ],
+            "output": {"type": "block"},
+            "language": "C",
+            "code": "printf(\"getBlock called.\")"
+        },
+        "multBlocks": {
+            "description": "Умножает два блока",
+            "inputs": [
+                {"name": "block1", "type": "block"},
+                {"name": "block2", "type": "block"}
+            ],
+            "output": {"type": "block"},
+            "language": "C",
+            "code": "printf(\"multBlocks called.\")"
+        },
+        "sumBlocks": {
+            "description": "Складывает два блока",
+            "inputs": [
+                {"name": "block1", "type": "block"},
+                {"name": "block2", "type": "block"}
+            ],
+            "output": {"type": "block"},
+            "language": "C",
+            "code": "printf(\"sumBlocks called.\")"
+        },
+        "aggregateBlocksToMatrix": {
+            "description": "Объединяет блоки в матрицу",
+            "inputs": [
+                {"name": "blocks", "type": "array[block]"}
+            ],
+            "output": {"type": "matrix"},
+            "language": "C",
+            "code": "printf(\"aggregateBlocksToMatrix called.\")"
+        }
+    }
+}

@@ -1,0 +1,49 @@
+{
+    "variables": [
+        {"name": "a", "type": "float", "value": "local:3.0"},
+        {"name": "b", "type": "float", "value": "local:4.0"},
+        {"name": "c", "type": "float", "value": "local:5.0"},
+        {"name": "P", "type": "float", "value": "local:12.0"},
+        {"name": "S", "type": "float"},
+        {"name": "alpha", "type": "float"},
+        {"name": "beta", "type": "float"},
+        {"name": "gamma", "type": "float"}
+    ],
+    "operations": [
+        {
+            "output_name": "P",
+            "output_type": "float",
+            "inputs": ["a", "b", "c"],
+            "code": "return a + b + c;",
+            "operation_name": "calculatePerimeter"
+        },
+        {
+            "output_name": "S",
+            "output_type": "float",
+            "inputs": ["a", "b", "c"],
+            "code": "float s = P / 2.0;\n return sqrt(s * (s - a) * (s - b) * (s - c));",
+            "operation_name": "calculateArea"
+        },
+        {
+            "output_name": "alpha",
+            "output_type": "float",
+            "inputs": ["a", "b", "c"],
+            "code": "return acos((b*b + c*c - a*a) / (2.0 * b * c));",
+            "operation_name": "calculateAlpha"
+        },
+        {
+            "output_name": "beta",
+            "output_type": "float",
+            "inputs": ["a", "b", "c"],
+            "code": "return acos((a*a + c*c - b*b) / (2.0 * a * c));",
+            "operation_name": "calculateBeta"
+        },
+        {
+            "output_name": "gamma",
+            "output_type": "float",
+            "inputs": ["a", "b", "c"],
+            "code": "return acos((a*a + b*b - c*c) / (2.0 * a * b));",
+            "operation_name": "calculateGamma"
+        }
+    ]
+}
